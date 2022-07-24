@@ -10,3 +10,7 @@ npm install -g typescript typescript-language-server
 npm install -g @tailwindcss/language-server
 ### Rust Analyzer
 https://github.com/rust-lang/rust-analyzer
+
+
+## Good Documentation for the different plugins
+[telescope](https://github.com/nvim-telescope/telescope.nvim)
