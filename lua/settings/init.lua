@@ -21,4 +21,5 @@ set.termguicolors = true
 set.cursorline = true
 
 set.syntax = 'on'
+set.completeopt = {'menu', 'menuone', 'noselect'}
 
