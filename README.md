@@ -10,6 +10,8 @@ npm install -g typescript typescript-language-server
 npm install -g @tailwindcss/language-server
 ### Rust Analyzer
 https://github.com/rust-lang/rust-analyzer
+### Lua
+https://github.com/sumneko/lua-language-server
 
 
 ## Good Documentation for the different plugins
