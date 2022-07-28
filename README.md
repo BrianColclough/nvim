@@ -1,5 +1,5 @@
 # nvim
-My nvim config
+Although small right now, I am getting into all the configuration that is possible in NeoVim and this repo will grow over time.
 
 ## LSP's Being used
 ### Angular
@@ -13,4 +13,5 @@ https://github.com/rust-lang/rust-analyzer
 
 
 ## Good Documentation for the different plugins
-[telescope](https://github.com/nvim-telescope/telescope.nvim)
+- [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+- [Fugitive](https://github.com/tpope/vim-fugitive)
