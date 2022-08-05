@@ -12,7 +12,17 @@ npm install -g @tailwindcss/language-server
 https://github.com/rust-lang/rust-analyzer
 ### Lua
 https://github.com/sumneko/lua-language-server
+### CSS Modules
+https://github.com/antonk52/cssmodules-language-server
 
+`npm install --global cssmodules-language-server`
+### ESLint
+https://github.com/hrsh7th/vscode-langservers-extracted
+
+`npm i -g vscode-langservers-extracted`
+
+### zk
+https://github.com/mickael-menu/zk
 
 ## Good Documentation for the different plugins
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
