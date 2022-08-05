@@ -1,7 +1,7 @@
-return require'packer'.startup(function()
+return require'packer'.startup(function(use)
     use 'wbthomason/packer.nvim'    
     use "EdenEast/nightfox.nvim"
-    
+
     -- lsp and autocomplete
     use 'neovim/nvim-lspconfig' -- lsp
     use 'hrsh7th/cmp-nvim-lsp'
@@ -10,8 +10,21 @@ return require'packer'.startup(function()
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
     use 'L3MON4D3/LuaSnip'
-    use 'saadparwaiz1/cmp_luasnip' 
-    use "rafamadriz/friendly-snippets" 
+    use 'saadparwaiz1/cmp_luasnip'
+    use "rafamadriz/friendly-snippets"
+    
+    use 'jxnblk/vim-mdx-js'
+
+    -- indentation lines
+    use "lukas-reineke/indent-blankline.nvim"
+
+    -- Comment out multiple lines as once
+    use {
+    'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
     
     use 'nvim-treesitter/nvim-treesitter'
     use {
@@ -36,7 +49,6 @@ return require'packer'.startup(function()
     
     use {
       'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    -- or                            , branch = '0.1.x',
       requires = { {'nvim-lua/plenary.nvim'} }
     }
     use 'nvim-lua/plenary.nvim'

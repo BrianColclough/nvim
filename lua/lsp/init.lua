@@ -27,6 +27,25 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
+require'lspconfig'.ltex.setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require'lspconfig'.eslint.setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require'lspconfig'.zk.setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
+
+require'lspconfig'.cssmodules_ls.setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
 require'lspconfig'.sumneko_lua.setup {
     on_attach = on_attach,
     flags = lsp_flags,
