@@ -15,6 +15,9 @@ return require'packer'.startup(function(use)
     
     use 'jxnblk/vim-mdx-js'
 
+    -- Formatter
+    use 'sbdchd/neoformat'
+
     -- indentation lines
     use "lukas-reineke/indent-blankline.nvim"
 

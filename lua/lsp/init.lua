@@ -86,5 +86,3 @@ lspconfig.util.default_config = vim.tbl_deep_extend(
   lsp_defaults
 )
 
-
-

@@ -126,6 +126,11 @@ _G.packer_plugins = {
     path = "/Users/briancolclough/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  neoformat = {
+    loaded = true,
+    path = "/Users/briancolclough/.local/share/nvim/site/pack/packer/start/neoformat",
+    url = "https://github.com/sbdchd/neoformat"
+  },
   ["nightfox.nvim"] = {
     loaded = true,
     path = "/Users/briancolclough/.local/share/nvim/site/pack/packer/start/nightfox.nvim",

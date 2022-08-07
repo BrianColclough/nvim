@@ -1,4 +1,4 @@
-vim.cmd("colorscheme nightfox")
+vim.cmd("colorscheme duskfox")
 
 require('lualine').setup({
 options = {
