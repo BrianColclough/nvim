@@ -1,4 +1,4 @@
-vim.cmd("colorscheme duskfox")
+vim.cmd("colorscheme Carbonfox")
 
 require('lualine').setup({
 options = {
