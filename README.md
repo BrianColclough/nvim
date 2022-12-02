@@ -14,6 +14,9 @@ https://github.com/rust-lang/rust-analyzer
 https://github.com/sumneko/lua-language-server
 ### CSS Modules
 https://github.com/antonk52/cssmodules-language-server
+### Python
+`npm i -g pyright`
+`require'lspconfig'.pyright.setup{}`
 
 `npm install --global cssmodules-language-server`
 ### ESLint
