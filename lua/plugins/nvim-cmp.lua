@@ -13,12 +13,10 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 	},
 	config = function()
-		-- Set up nvim-cmp.
 		local cmp = require("cmp")
 
 		cmp.setup({
 			snippet = {
-				-- REQUIRED - you must specify a snippet engine
 				expand = function(args)
 					require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
 				end,
@@ -32,20 +30,13 @@ return {
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.abort(),
+                ["<C-j>"] = cmp.mapping.select_next_item({select = true}),
+                ["<C-k>"] = cmp.mapping.select_prev_item({select = true}),
 				["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 			}),
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" }, -- For luasnip users.
-			}, {
-				{ name = "buffer" },
-			}),
-		})
-
-		-- Set configuration for specific filetype.
-		cmp.setup.filetype("gitcommit", {
-			sources = cmp.config.sources({
-				{ name = "git" }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
 			}, {
 				{ name = "buffer" },
 			}),
@@ -71,8 +62,41 @@ return {
 
 		-- Set up lspconfig.
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
-		-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-		require("lspconfig")["<YOUR_LSP_SERVER>"].setup({
+		local lspconfig = require("lspconfig")
+
+		lspconfig.astro.setup({
+			capabilities = capabilities,
+		})
+
+		lspconfig.ltex.setup({})
+		lspconfig.eslint.setup({
+			capabilities = capabilities,
+		})
+		lspconfig.zk.setup({
+			capabilities = capabilities,
+		})
+
+		lspconfig.cssmodules_ls.setup({
+			capabilities = capabilities,
+		})
+
+		lspconfig.lua_ls.setup({
+			capabilities = capabilities,
+		})
+		lspconfig.tsserver.setup({
+			capabilities = capabilities,
+		})
+		lspconfig.angularls.setup({
+			capabilities = capabilities,
+		})
+		lspconfig.tailwindcss.setup({
+			capabilities = capabilities,
+		})
+		lspconfig.rust_analyzer.setup({
+			capabilities = capabilities,
+		})
+
+		lspconfig.vuels.setup({
 			capabilities = capabilities,
 		})
 	end,

@@ -1,6 +1,5 @@
 return {
 	"MunifTanjim/eslint.nvim",
-	lazy = true,
 	dependencies = {
 		"neovim/nvim-lspconfig",
 		"jose-elias-alvarez/null-ls.nvim",

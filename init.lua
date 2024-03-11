@@ -50,12 +50,7 @@ map("n", "<leader>l", "<C-w>l", opts)
 map("n", "<leader>k", "<C-w>k", opts)
 map("n", "<leader>j", "<C-w>j", opts)
 
-map("n", "<c-P>", "<cmd>lua require('fzf-lua').files()<CR>", { noremap = true, silent = true })
-
-map("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", { noremap = true, silent = true })
-map("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", { noremap = true, silent = true })
-map("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", { noremap = true, silent = true })
-map("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>", { noremap = true, silent = true })
+map("n", "<leader>q", ":q<CR>", opts)
 
 -- mappings for autofomat
 map("n", "<leader>p", ":Neoformat<CR>", opts)

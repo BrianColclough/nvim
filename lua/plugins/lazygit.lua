@@ -1,18 +1,23 @@
+-- nvim v0.8.0
 return {
-	"kdheepak/lazygit.nvim",
-	cmd = {
-		"LazyGit",
-		"LazyGitConfig",
-		"LazyGitCurrentFile",
-		"LazyGitFilter",
-		"LazyGitFilterCurrentFile",
+	{
+		"kdheepak/lazygit.nvim",
+		cmd = {
+			"LazyGit",
+			"LazyGitConfig",
+			"LazyGitCurrentFile",
+			"LazyGitFilter",
+			"LazyGitFilterCurrentFile",
+		},
+		-- optional for floating window border decoration
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+        lazy = false,
+		init = function()
+			local map = vim.api.nvim_set_keymap
+			local opts = { noremap = true, silent = true }
+			map("n", "<leader>g", ":LazyGit<CR>", opts)
+		end,
 	},
-	dependencies = {
-		"nvim-lua/plenary.nvim",
-	},
-    config = function()
-        require("lazygit").setup({
-            vim.api.nvim_set_keymap("n", "<leader>gg", ":LazyGit<CR>", { noremap = true, silent = true })
-        })
-    end,
 }

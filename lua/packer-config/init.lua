@@ -20,13 +20,6 @@ return require("packer").startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 
 	-- Comment out multiple lines as once
-	use({
-		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup()
-		end,
-	})
-
 	use("nvim-treesitter/nvim-treesitter")
 	use({
 		"kyazdani42/nvim-tree.lua",
