@@ -113,5 +113,13 @@ return {
 		lspconfig.jsonls.setup({
 			capabilities = capabilities,
 		})
+
+		lspconfig.cssls.setup({
+			capabilities = capabilities,
+		})
+
+		lspconfig.css_variables.setup({
+			capabilities = capabilities,
+		})
 	end,
 }

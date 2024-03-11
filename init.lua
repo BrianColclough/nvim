@@ -58,8 +58,8 @@ map("n", "<leader>q", ":q<CR>", opts)
 map("n", "<leader>w", ":w<CR>", opts)
 
 -- terminal mappings
--- map("n", "<leader>t", ":vsplit term://zsh<CR>", opts) -- for Mac
--- map("n", "<leader>t", ":terminal zsh.exe", opts) -- for Mac
+-- map("n", "<leader>vt", ":80vsplit term://zsh<CR>", opts) -- for Mac
+-- map("n", "<leader>t", ":terminal zsh<CR>", opts) -- for Mac
 map("n", "<leader>vt", ":80vsplit term://powershell<CR>", opts) -- for Windows
 map("n", "<leader>t", ":terminal powershell.exe<CR>", opts) -- for Windows
 
