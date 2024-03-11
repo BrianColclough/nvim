@@ -30,8 +30,8 @@ return {
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.abort(),
-                ["<C-j>"] = cmp.mapping.select_next_item({select = true}),
-                ["<C-k>"] = cmp.mapping.select_prev_item({select = true}),
+				["<C-j>"] = cmp.mapping.select_next_item({ select = true }),
+				["<C-k>"] = cmp.mapping.select_prev_item({ select = true }),
 				["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 			}),
 			sources = cmp.config.sources({
@@ -82,28 +82,35 @@ return {
 
 		lspconfig.lua_ls.setup({
 			capabilities = capabilities,
-            settings = {
-                Lua = {
-                    diagnostics = {
-                        globals = { "vim" },
-                    },
-                },
-            },
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = { "vim" },
+					},
+				},
+			},
 		})
 		lspconfig.tsserver.setup({
 			capabilities = capabilities,
 		})
+
 		lspconfig.angularls.setup({
 			capabilities = capabilities,
 		})
+
 		lspconfig.tailwindcss.setup({
 			capabilities = capabilities,
 		})
+
 		lspconfig.rust_analyzer.setup({
 			capabilities = capabilities,
 		})
 
 		lspconfig.vuels.setup({
+			capabilities = capabilities,
+		})
+
+		lspconfig.jsonls.setup({
 			capabilities = capabilities,
 		})
 	end,
