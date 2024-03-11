@@ -41,8 +41,11 @@ set.clipboard = "unnamedplus"
 set.syntax = "on"
 set.completeopt = { "menu", "menuone", "noselect" }
 
-map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 map("i", "jk", "<Esc>", opts)
+
+map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+map("n", "<leader>E", ":NvimTreeFindFileToggle<CR>", opts)
+map("n", "<leader>m", ":NvimTreeFocus<CR>", opts)
 
 -- window movement
 map("n", "<leader>h", "<C-w>h", opts)
@@ -51,6 +54,17 @@ map("n", "<leader>k", "<C-w>k", opts)
 map("n", "<leader>j", "<C-w>j", opts)
 
 map("n", "<leader>q", ":q<CR>", opts)
+map("n", "<leader>w", ":w<CR>", opts)
+
+-- terminal mappings
+-- map("n", "<leader>t", ":vsplit term://zsh<CR>", opts) -- for Mac
+-- map("n", "<leader>t", ":terminal zsh.exe", opts) -- for Mac
+map("n", "<leader>vt", ":80vsplit term://powershell<CR>", opts) -- for Windows
+map("n", "<leader>t", ":terminal powershell.exe<CR>", opts) -- for Windows
+
+map("t", "jk", "<C-\\><C-n>", opts)
+
+
 
 -- mappings for autofomat
 map("n", "<leader>p", ":Neoformat<CR>", opts)
