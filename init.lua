@@ -17,6 +17,7 @@ local set = vim.opt
 
 vim.g.mapleader = " "
 
+set.updatetime = 100
 set.expandtab = true
 set.smarttab = true
 set.number = true
@@ -62,9 +63,7 @@ map("n", "<leader>w", ":w<CR>", opts)
 map("n", "<leader>vt", ":80vsplit term://powershell<CR>", opts) -- for Windows
 map("n", "<leader>t", ":terminal powershell.exe<CR>", opts) -- for Windows
 
-map("t", "jk", "<C-\\><C-n>", opts)
-
-
+map("t", "<C-j>", "<C-\\><C-n>", opts)
 
 -- mappings for autofomat
 map("n", "<leader>p", ":Neoformat<CR>", opts)

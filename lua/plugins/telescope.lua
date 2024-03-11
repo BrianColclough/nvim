@@ -3,33 +3,10 @@ return {
 	branch = "0.1.x",
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
-		local map = vim.api.nvim_set_keymap
-
-		require("telescope").setup({
-			map(
-				"n",
-				"<leader>ff",
-				"<cmd>lua require('telescope.builtin').find_files()<cr>",
-				{ noremap = true, silent = true }
-			),
-			map(
-				"n",
-				"<leader>fg",
-				"<cmd>lua require('telescope.builtin').live_grep()<cr>",
-				{ noremap = true, silent = true }
-			),
-			map(
-				"n",
-				"<leader>fb",
-				"<cmd>lua require('telescope.builtin').buffers()<cr>",
-				{ noremap = true, silent = true }
-			),
-			map(
-				"n",
-				"<leader>fh",
-				"<cmd>lua require('telescope.builtin').help_tags()<cr>",
-				{ noremap = true, silent = true }
-			),
-		})
+        local builtin = require('telescope.builtin')
+        vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+        vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+        vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+        vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 	end,
 }
