@@ -39,6 +39,8 @@ return {
                 "cssmodules_ls",
                 "angularls",
                 "vuels",
+                'ltex',
+                "astro",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
