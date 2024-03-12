@@ -2,6 +2,7 @@ require("remap")
 
 local autocmd = vim.api.nvim_create_autocmd
 
+-- Highlight yanked text
 autocmd('TextYankPost', {
     pattern = '*',
     callback = function()

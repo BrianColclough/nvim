@@ -37,6 +37,8 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- copilot remap
+
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 map("n", "<leader>E", ":NvimTreeFindFileToggle<CR>", opts)
 map("n", "<leader>m", ":NvimTreeFocus<CR>", opts)
