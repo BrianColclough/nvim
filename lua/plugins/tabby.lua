@@ -25,8 +25,8 @@ return {
 		vim.api.nvim_set_keymap("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true })
 		-- move current tab to next position
 		vim.api.nvim_set_keymap("n", "<leader>tmn", ":+tabmove<CR>", { noremap = true })
-        vim.api.nvim_set_keymap("n", "<Tab>", ":tabnext<CR>", { noremap = true })
-        vim.api.nvim_set_keymap("n", "<S-Tab>", ":tabprevious<CR>", { noremap = true })
+        vim.api.nvim_set_keymap("n", "<Tab>", ":tabnext<CR>", { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "<S-Tab>", ":tabprevious<CR>", { noremap = true, silent = true })
 
 
 		require("tabby.tabline").set(function(line)
