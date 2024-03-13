@@ -18,7 +18,7 @@ return {
 			harpoon:list():select(1)
 		end)
 		vim.keymap.set("n", "<leader>ms", function()
-			harpoon:list():select(3)
+			harpoon:list():select(2)
 		end)
 		vim.keymap.set("n", "<leader>md", function()
 			harpoon:list():select(3)

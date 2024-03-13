@@ -74,4 +74,4 @@ end
 map("t", "<C-j>", "<C-\\><C-n>", opts)
 
 -- mappings for autofomat
-map("n", "<leader>f", ":Neoformat<CR>", opts)
+map("n", "<leader>F", ":Neoformat<CR>", opts)
