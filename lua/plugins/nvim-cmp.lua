@@ -29,22 +29,52 @@ return {
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
+                "eslint",
                 "lua_ls",
                 "rust_analyzer",
                 "tsserver",
                 "cssls",
                 "jsonls",
                 "tailwindcss",
-                "cssmodules_ls",
                 "angularls",
-                "vuels",
-                'ltex',
+                "ltex",
                 "astro",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
                     require("lspconfig")[server_name].setup({
                         capabilities = capabilities,
+                    })
+                end,
+
+                ["eslint"] = function()
+                    local lspconfig = require("lspconfig")
+
+                    lspconfig.eslint.setup({
+                        capabilities = capabilities,
+                        on_attach = function(client, bufnr)
+                            vim.api.nvim_create_autocmd('BufWritePre', {
+                                pattern = { '*.tsx', '*.ts', '*.jsx', '*.js' },
+                                command = 'silent! EslintFixAll',
+                            })
+                        end,
+                    })
+                end,
+
+                ["angularls"] = function()
+                    local cmd = {
+                        "ngserver",
+                        "--stdio",
+                        "--tsProbeLocations",
+                        "--ngProbeLocations",
+                    }
+
+                    local lspconfig = require("lspconfig")
+                    lspconfig.angularls.setup({
+                        capabilities = capabilities,
+                        config = {
+                            cmd = cmd,
+                        },
                     })
                 end,
 
@@ -62,7 +92,7 @@ return {
                     })
                 end,
 
-                ['cssls'] = function()
+                ["cssls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.cssls.setup({
                         capabilities = capabilities,
@@ -76,11 +106,8 @@ return {
                         },
                     })
                 end,
-
             },
         })
-
-        local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({
             snippet = {
@@ -97,8 +124,8 @@ return {
                 ["<C-f>"] = cmp.mapping.scroll_docs(4),
                 ["<C-Space>"] = cmp.mapping.complete(),
                 ["<C-e>"] = cmp.mapping.abort(),
-                ["<C-j>"] = cmp.mapping.select_next_item({ select = true }),
-                ["<C-k>"] = cmp.mapping.select_prev_item({ select = true }),
+                ["<C-p>"] = cmp.mapping.select_prev_item({ select = true }),
+                ["<C-n>"] = cmp.mapping.select_next_item({ select = true }),
                 ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
             }),
             sources = cmp.config.sources({

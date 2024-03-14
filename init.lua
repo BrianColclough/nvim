@@ -3,11 +3,11 @@ require("remap")
 local autocmd = vim.api.nvim_create_autocmd
 
 -- Highlight yanked text
-autocmd('TextYankPost', {
-    pattern = '*',
+autocmd("TextYankPost", {
+    pattern = "*",
     callback = function()
         vim.highlight.on_yank({
-            higroup = 'IncSearch',
+            higroup = "IncSearch",
             timeout = 50,
         })
     end,
@@ -24,6 +24,7 @@ if not vim.loop.fs_stat(lazypath) then
         lazypath,
     })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
