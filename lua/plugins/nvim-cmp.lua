@@ -52,12 +52,15 @@ return {
 
                     lspconfig.eslint.setup({
                         capabilities = capabilities,
-                        on_attach = function(client, bufnr)
-                            vim.api.nvim_create_autocmd('BufWritePre', {
-                                pattern = { '*.tsx', '*.ts', '*.jsx', '*.js' },
-                                command = 'silent! EslintFixAll',
-                            })
-                        end,
+                        settings = {
+                            autoFixOnSave = true,
+                        },
+                        -- on_attach = function(client, bufnr)
+                        --     vim.api.nvim_create_autocmd('BufWritePre', {
+                        --         pattern = { '*.tsx', '*.ts', '*.jsx', '*.js' },
+                        --         command = 'silent! EslintFixAll',
+                        --     })
+                        -- end,
                     })
                 end,
 
