@@ -1,11 +1,16 @@
 return {
     "folke/zen-mode.nvim",
-   config = function()
+    config = function()
         vim.keymap.set("n", "<leader>zz", function()
             require("zen-mode").setup {
+                window = {
+                    wezterm = { enabled = true, font = "+2" }
+                },
             }
+
             require("zen-mode").toggle()
-            vim.wo.wrap = false
+
+            vim.wo.wrap = true
             vim.wo.number = true
             vim.wo.rnu = true
             ColorMyPencils()
@@ -16,11 +21,12 @@ return {
             require("zen-mode").setup {
                 window = {
                     width = 80,
-                    options = { }
+                    options = {}
                 },
             }
             require("zen-mode").toggle()
-            vim.wo.wrap = false
+
+            vim.wo.wrap = true
             vim.wo.number = false
             vim.wo.rnu = false
             vim.opt.colorcolumn = "0"
