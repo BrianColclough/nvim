@@ -27,7 +27,7 @@ set.backup = false
 set.hlsearch = false
 set.incsearch = true
 
-set.scrolloff = 8
+set.scrolloff = 12
 set.termguicolors = true
 set.cursorline = true
 set.clipboard = "unnamedplus"
