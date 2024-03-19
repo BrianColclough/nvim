@@ -4,6 +4,8 @@ local opts = { noremap = true, silent = true }
 local set = vim.opt
 
 vim.g.mapleader = " "
+vim.g.copilot_no_tab_map = true
+
 
 set.number = true
 set.rnu = true

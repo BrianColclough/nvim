@@ -50,7 +50,7 @@ return {
                     local lspconfig = require("lspconfig")
                     lspconfig.tsserver.setup({
                         capabilities = capabilities,
-                        filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "astro" },
+                        filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
                     })
                 end,
 
@@ -103,7 +103,7 @@ return {
                     local lspconfig = require("lspconfig")
                     lspconfig.cssls.setup({
                         capabilities = capabilities,
-                        filetypes = { "css", "scss", "astro" },
+                        filetypes = { "css", "scss"},
                         settings = {
                             scss = {
                                 validate = true,
