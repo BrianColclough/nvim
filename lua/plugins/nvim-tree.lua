@@ -14,6 +14,9 @@ return {
             filters = {
                 dotfiles = true,
             },
+            view = {
+                width = 50,
+            },
 
             vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts),
             vim.keymap.set("n", "<leader>E", ":NvimTreeFindFileToggle<CR>", opts),
