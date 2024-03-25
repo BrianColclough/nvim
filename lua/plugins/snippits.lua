@@ -15,7 +15,6 @@ return {
 			ls.filetype_extend("javascript", { "jsdoc" })
 			ls.filetype_extend("typescript", { "angular" })
 
-			--- TODO: What is expand?
 			vim.keymap.set({ "i" }, "<C-k>", function()
 				ls.expand_or_jump()
 			end, { silent = true })

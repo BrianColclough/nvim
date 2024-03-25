@@ -6,13 +6,6 @@ local prompts = {
     FixCode = "Please fix the following code to make it work as intended.",
     BetterNamings = "Please provide better names for the following variables and functions.",
     Documentation = "Please provide documentation for the following code.",
-    CommitStaged = {
-        prompt =
-        "Write commit message for the current changes. Make sure the title of the commit is the name of the current branch. Wrap the whole message in code block with language gitcommit.",
-        selection = function(source)
-            return require("CopilotChat.select").gitdiff(source, true)
-        end,
-    },
 }
 return {
     "CopilotC-Nvim/CopilotChat.nvim",
