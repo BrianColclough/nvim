@@ -44,13 +44,5 @@ return {
 
 		vim.keymap.set("n", "<leader>fc", builtin.git_commits, {})
 		vim.keymap.set("n", "<C-p>", builtin.git_files, {})
-
-		vim.keymap.set("n", "<leader>FF", "<cmd>Telescope resume<CR>")
-
-		-- Border bg transparency
-		vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none" })
-		vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = "none" })
-		vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { bg = "none" })
-		vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { bg = "none" })
 	end,
 }
