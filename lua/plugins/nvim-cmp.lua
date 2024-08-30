@@ -36,21 +36,12 @@ return {
 				"jsonls",
 				"tailwindcss",
 				"angularls",
-				"ltex",
 				"astro",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
 					require("lspconfig")[server_name].setup({
 						capabilities = capabilities,
-					})
-				end,
-
-				["tsserver"] = function()
-					local lspconfig = require("lspconfig")
-					lspconfig.tsserver.setup({
-						capabilities = capabilities,
-						filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
 					})
 				end,
 

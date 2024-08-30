@@ -1,26 +1,26 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
-	version = "*",
-	lazy = false,
-	cmd = "TSUpdate",
-	config = function()
-		require("nvim-treesitter").setup({
-			-- A list of parser names, or "all"
-			ensure_installed = "all",
+    "nvim-treesitter/nvim-treesitter",
+    cmd = "TSUpdate",
+    config = function()
+        local configs = require("nvim-treesitter")
 
-			-- Install parsers synchronously (only applied to `ensure_installed`)
-			sync_install = false,
+        configs.setup({
+            -- A list of parser names, or "all"
+            ensure_installed = { 'typescript', 'html', 'javascript', 'angular', 'json', 'json5', 'rust', 'css', 'scss', 'java' },
 
-			-- Automatically install missing parsers when entering buffer
-			auto_install = true,
+            -- Install parsers synchronously (only applied to `ensure_installed`)
+            sync_install = false,
 
-			highlight = {
-				enable = true,
-			},
+            -- Automatically install missing parsers when entering buffer
+            auto_install = true,
 
-			indent = {
-				enable = true,
-			},
-		})
-	end,
+            highlight = {
+                enable = true,
+            },
+
+            indent = {
+                enable = true,
+            },
+        })
+    end,
 }
