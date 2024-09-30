@@ -20,7 +20,6 @@ return {
 
             vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts),
             vim.keymap.set("n", "<leader>E", ":NvimTreeFindFileToggle<CR>", opts),
-            vim.keymap.set("n", "<leader>m", ":NvimTreeFocus<CR>", opts)
         })
     end,
 }

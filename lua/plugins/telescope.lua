@@ -2,7 +2,7 @@ return {
 	"nvim-telescope/telescope.nvim",
 	branch = "0.1.x",
 	dependencies = { "nvim-lua/plenary.nvim" },
-	opts = {},
+	opts = { },
 	config = function()
 		local builtin = require("telescope.builtin")
 
@@ -42,7 +42,10 @@ return {
 			builtin.lsp_outgoing_calls()
 		end)
 
+		-- Git bindings
 		vim.keymap.set("n", "<leader>fc", builtin.git_commits, {})
 		vim.keymap.set("n", "<C-p>", builtin.git_files, {})
+		vim.keymap.set("n", "<leader>fs", builtin.git_status, {})
+		vim.keymap.set("n", "<leader>m", builtin.git_branches, {})
 	end,
 }
