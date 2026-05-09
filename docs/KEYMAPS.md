@@ -145,6 +145,10 @@ Active when an LSP is attached. Python uses `pyright` (types/hover) + `ruff` (li
 | `n` | `<leader>mo` | Enter output window |
 | `n` | `<leader>mh` | Hide output |
 | `n` | `<leader>mq` | Delete cell |
+| `n` | `<leader>mA` | Run **all** cells (via quarto runner) |
+| `n` | `<leader>mB` | Run all cells **below** cursor |
+| `n` | `<leader>mU` | Run all cells **above** cursor (Up) |
+| `n` | `<leader>mC` | Run current cell (markdown-fence aware) |
 
 > Harpoon and Molten share the `<leader>m` prefix but use disjoint suffixes. See [`AGENTS.md`](../AGENTS.md) for the Python/Jupyter setup steps.
 
