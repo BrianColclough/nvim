@@ -1,6 +1,3 @@
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
-
 local set = vim.opt
 
 vim.g.mapleader = " "
@@ -36,46 +33,33 @@ set.clipboard = "unnamedplus"
 
 set.colorcolumn = "120"
 
-map("i", "jk", "<Esc>", opts)
+vim.keymap.set("i", "jk", "<Esc>", { noremap = true, silent = true, desc = "Exit insert mode" })
 
 -- move highlighted code up and down lines
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
 -- keep cursor in the same location when joining lines
-vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Join lines (keep cursor)" })
 
--- user leader P to paste over visual selection and not lose the contents of the register
-vim.keymap.set("x", "<leader>p", [["_dP]])
+-- use leader P to paste over visual selection and not lose the contents of the register
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste over selection (keep register)" })
 
 -- ensure cursor is always in the middle of the screen
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", "*", "*zzzv")
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half-page down (centered)" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half-page up (centered)" })
+vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result (centered)" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Prev search result (centered)" })
+vim.keymap.set("n", "*", "*zzzv", { desc = "Search word under cursor (centered)" })
 
 -- window movement
-map("n", "<leader>h", "<C-w>h", opts)
-map("n", "<leader>l", "<C-w>l", opts)
-map("n", "<leader>k", "<C-w>k", opts)
-map("n", "<leader>j", "<C-w>j", opts)
+vim.keymap.set("n", "<leader>h", "<C-w>h", { noremap = true, silent = true, desc = "Window: move left" })
+vim.keymap.set("n", "<leader>l", "<C-w>l", { noremap = true, silent = true, desc = "Window: move right" })
+vim.keymap.set("n", "<leader>k", "<C-w>k", { noremap = true, silent = true, desc = "Window: move up" })
+vim.keymap.set("n", "<leader>j", "<C-w>j", { noremap = true, silent = true, desc = "Window: move down" })
 
-map("n", "<leader>q", ":q<CR>", opts)
-map("n", "<leader>w", ":w<CR>", opts)
+vim.keymap.set("n", "<leader>q", ":q<CR>", { noremap = true, silent = true, desc = "Quit" })
+vim.keymap.set("n", "<leader>w", ":w<CR>", { noremap = true, silent = true, desc = "Save" })
 
--- terminal mappings
-if vim.fn.has("win32") or vim.fn.has("win64") then
-    map("n", "<leader>vt", ":80vsplit term://powershell<CR>", opts) -- for Windows
-    map("n", "<leader>t", ":terminal powershell.exe<CR>", opts)     -- for Windows
-end
-
-if vim.fn.has("macunix") then
-    map("n", "<leader>vt", ":80vsplit term://zsh<CR>", opts) -- for Mac
-    map("n", "<leader>t", ":terminal zsh<CR>", opts)         -- for Mac
-end
-
-map("t", "<C-j>", "<C-\\><C-n>", opts)
-
--- mappings for autofomat
-map("n", "<leader>F", ":Neoformat<CR>", opts)
+-- escape from terminal-mode (used when :terminal is opened manually)
+vim.keymap.set("t", "<C-j>", [[<C-\><C-n>]], { noremap = true, silent = true, desc = "Exit terminal mode" })

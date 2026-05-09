@@ -6,7 +6,10 @@ return {
 
         configs.setup({
             -- A list of parser names, or "all"
-            ensure_installed = { 'typescript', 'html', 'javascript', 'angular', 'json', 'json5', 'rust', 'css', 'scss', 'java' },
+            ensure_installed = {
+                'typescript', 'html', 'javascript', 'angular', 'json', 'json5', 'rust', 'css', 'scss',
+                'python', 'markdown', 'markdown_inline', 'lua', 'vim', 'vimdoc',
+            },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,

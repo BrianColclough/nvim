@@ -13,7 +13,6 @@ return {
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
-        'nvim-java/nvim-java'
     },
     config = function()
         local cmp = require("cmp")
@@ -27,7 +26,6 @@ return {
 
         require("fidget").setup({})
         require("mason").setup()
-        require('java').setup({})
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "eslint",
@@ -39,7 +37,8 @@ return {
                 "tailwindcss",
                 "angularls",
                 "astro",
-                "jdtls"
+                "pyright",
+                "ruff",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -62,23 +61,30 @@ return {
                     })
                 end,
 
-                ['jdtls'] = function()
-                    local lspConfig = require('lspconfig')
-                    lspConfig.jdtls.setup({
+                ["pyright"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.pyright.setup({
+                        capabilities = capabilities,
                         settings = {
-                            java = {
-                                configuration = {
-                                    runtimes = {
-                                        {
-                                            name = "Coretto 21",
-                                            path = "/Users/colcloub/Library/Java/JavaVirtualMachines",
-                                            default = true,
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                            python = {
+                                analysis = {
+                                    typeCheckingMode = "basic",
+                                    autoSearchPaths = true,
+                                    useLibraryCodeForTypes = true,
+                                },
+                            },
+                        },
+                    })
+                end,
 
+                ["ruff"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.ruff.setup({
+                        capabilities = capabilities,
+                        on_attach = function(client, _)
+                            -- let pyright own hovers
+                            client.server_capabilities.hoverProvider = false
+                        end,
                     })
                 end,
 
