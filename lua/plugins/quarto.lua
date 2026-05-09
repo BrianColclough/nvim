@@ -18,4 +18,14 @@ return {
             completion = { enabled = true },
         },
     },
+    keys = {
+        { "<leader>mA", function() require("quarto.runner").run_all() end,
+            desc = "Quarto/Molten: run all cells" },
+        { "<leader>mB", function() require("quarto.runner").run_below() end,
+            desc = "Quarto/Molten: run cells below cursor" },
+        { "<leader>mU", function() require("quarto.runner").run_above() end,
+            desc = "Quarto/Molten: run cells above cursor" },
+        { "<leader>mC", function() require("quarto.runner").run_cell() end,
+            desc = "Quarto/Molten: run current cell" },
+    },
 }

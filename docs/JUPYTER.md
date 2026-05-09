@@ -99,6 +99,21 @@ Then use these keymaps (leader = `<space>`):
 
 Output appears as virtual text below the cell. For plots, the image renders inline (requires Kitty terminal — see below).
 
+### Running the whole notebook
+
+Molten itself only evaluates lines/operators/visual selections — it doesn't know what a "cell" is. The cell-aware "run everything" commands come from **quarto-nvim**, which is configured here to dispatch to molten:
+
+| Keys | Action |
+|---|---|
+| `<leader>mA` | Run **all** cells in the buffer |
+| `<leader>mB` | Run all cells **below** the cursor |
+| `<leader>mU` | Run all cells **above** the cursor |
+| `<leader>mC` | Run the current cell (whole markdown fence) |
+
+These understand the ` ```python ... ``` ` cell fences that jupytext produces, so they Just Work on a `.ipynb` opened through this config. Equivalent function form: `:lua require("quarto.runner").run_all()`.
+
+> Make sure you've called `:MoltenInit python3` once first — quarto's runner dispatches to whatever kernel molten has attached. If no kernel is running, the calls become no-ops.
+
 ---
 
 ## Inline plots (Kitty)
