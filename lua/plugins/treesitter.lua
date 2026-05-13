@@ -2,7 +2,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     cmd = "TSUpdate",
     config = function()
-        local configs = require("nvim-treesitter")
+        local configs = require("nvim-treesitter.configs")
 
         configs.setup({
             -- A list of parser names, or "all"

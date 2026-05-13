@@ -18,9 +18,19 @@ return {
             completion = { enabled = true },
         },
     },
+    config = function(_, opts)
+        require("quarto").setup(opts)
+        vim.api.nvim_create_autocmd("FileType", {
+            pattern = { "quarto", "markdown" },
+            callback = function()
+                require("quarto").activate()
+            end,
+            desc = "Activate quarto runner for quarto/markdown buffers",
+        })
+    end,
     keys = {
-        { "<leader>mA", function() require("quarto.runner").run_all() end,
-            desc = "Quarto/Molten: run all cells" },
+        { "<leader>mA", function() require("quarto.runner").run_all(true) end,
+            desc = "Quarto/Molten: run all cells (all languages)" },
         { "<leader>mB", function() require("quarto.runner").run_below() end,
             desc = "Quarto/Molten: run cells below cursor" },
         { "<leader>mU", function() require("quarto.runner").run_above() end,

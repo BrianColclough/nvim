@@ -39,6 +39,7 @@ return {
                 "astro",
                 "pyright",
                 "ruff",
+                "marksman",
             },
             handlers = {
                 function(server_name) -- default handler (optional)

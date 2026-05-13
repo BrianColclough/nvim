@@ -38,8 +38,6 @@ Reference for every keybinding configured in this Neovim setup. The leader key i
 |---|---|---|
 | `n` | `<leader>w` | Save |
 | `n` | `<leader>q` | Quit |
-| `n` | `<leader>e` | Toggle NvimTree |
-| `n` | `<leader>E` | Toggle NvimTree, locate current file |
 | `n` | `-` | Open parent directory in [oil.nvim](https://github.com/stevearc/oil.nvim) |
 
 ## Telescope (`<leader>f` group)
@@ -201,6 +199,32 @@ Active when an LSP is attached. Python uses `pyright` (types/hover) + `ruff` (li
 | `n,v` | `<leader>ccd` | Generate documentation |
 | `n,v` | `<leader>ccf` | Fix code |
 | `n,v` | `<leader>ccF` | Fix diagnostic |
+
+## Notes / Markdown (`<leader>n` group)
+
+Active in `markdown` / `quarto` buffers. Vault-aware commands target the
+Obsidian vault registered in [`lua/plugins/obsidian.lua`](../lua/plugins/obsidian.lua).
+Plain markdown files outside the vault still get rendering, spell, soft wrap,
+and the `marksman` LSP — they just don't get backlinks/daily-notes.
+
+| Mode | Keys | Action |
+|---|---|---|
+| `n` | `<leader>nn` | New note in vault (`:ObsidianNew`) |
+| `n` | `<leader>nf` | Find note by filename (`:ObsidianQuickSwitch`) |
+| `n` | `<leader>ng` | Grep notes (`:ObsidianSearch`) |
+| `n` | `<leader>nt` | Today's daily note (`:ObsidianToday`) |
+| `n` | `<leader>ny` | Yesterday's daily note (`:ObsidianYesterday`) |
+| `n` | `<leader>nl` | Follow link under cursor (`:ObsidianFollowLink`) |
+| `n` | `<leader>nb` | Show backlinks (`:ObsidianBacklinks`) |
+| `n` | `<leader>no` | Open note in Obsidian app (`:ObsidianOpen`) |
+| `n` | `<leader>nT` | Insert template (`:ObsidianTemplate`) |
+| `v` | `<leader>nL` | Wrap selection in `[[wikilink]]` (`:ObsidianLink`) |
+| `n` | `<leader>nr` | Toggle pretty render (`:RenderMarkdown toggle`) |
+
+Buffer-local prose settings (set automatically on `FileType markdown` /
+`quarto` by [`lua/plugins/markdown-prose.lua`](../lua/plugins/markdown-prose.lua)):
+soft wrap, spell-check, `conceallevel=2`, and `j` / `k` / `0` / `$` remapped
+to their visual-line variants (`gj` / `gk` / `g0` / `g$`).
 
 ## Misc
 

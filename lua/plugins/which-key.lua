@@ -19,6 +19,7 @@ return {
             { "<leader>z",  group = "zen-mode" },
             { "<leader>g",  group = "git" },
             { "<leader>s",  group = "search word" },
+            { "<leader>n",  group = "notes / markdown" },
         })
     end,
 }
