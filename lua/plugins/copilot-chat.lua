@@ -1,63 +1,34 @@
 local prompts = {
-	Review = "Please review the following code and provide suggestions for improvement.",
-	Refactor = "Please refactor the following code to improve its clarity and readability.",
-	BetterNamings = "Please provide better names for the following variables and functions.",
+    Review = "Please review the following code and provide suggestions for improvement.",
+    Refactor = "Please refactor the following code to improve its clarity and readability.",
+    BetterNamings = "Please provide better names for the following variables and functions.",
 }
 
 return {
     "CopilotC-Nvim/CopilotChat.nvim",
-    branch = "canary",
+    branch = "main",
     event = "VeryLazy",
     dependencies = {
-        { "github/copilot.vim" }, -- or github/copilot.vim
-        { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+        { "github/copilot.vim" },
+        { "nvim-lua/plenary.nvim" },
     },
     opts = {
         show_help = "yes",
-        debug = false,        -- Set to true to see the response from GitHub Copilot API. The log file will be in ~/.local/state/nvim/CopilotChat.nvim.log.
+        debug = false,
         prompts = prompts,
-        disable_extra_info = "no", -- Disable extra information (e.g.: system prompt, token count) in the response.
-        hide_system_prompt = "yes", -- Show user prompts only and hide system prompts.
+        disable_extra_info = "no",
+        hide_system_prompt = "yes",
     },
     keys = {
-        { "<leader>cc",  "<cmd>CopilotChatOpen<CR>" },
-        { "<leader>ccm", "<cmd>CopilotChatCommitStaged<CR>" },
-        { "<leader>cct", "<cmd>CopilotChatTests<cr>",       desc = "CopilotChat - Generate tests" },
-        {
-            "<leader>cce",
-            "<cmd>CopilotChatExplain<cr>",
-            desc = "CopilotChat - Explain code",
-            mode = { "v", "n" },
-        },
-        {
-            "<leader>ccr",
-            "<cmd>CopilotChatReview<cr>",
-            desc = "CopilotChat - Review code",
-            mode = { "v", "n" },
-        },
-        {
-            "<leader>ccR",
-            "<cmd>CopilotChatRefactor<cr>",
-            desc = "CopilotChat - Refactor code",
-            mode = { "v", "n" },
-        },
-        {
-            "<leader>ccn",
-            "<cmd>CopilotChatBetterNamings<cr>",
-            desc = "CopilotChat - Better Naming",
-            mode = { "v", "n" },
-        },
-        {
-            "<leader>ccd",
-            "<cmd>CopilotChatDocumentation<cr>",
-            desc = "CopilotChat - Documentation",
-            mode = { "v", "n" },
-        },
-        { "<leader>ccf", "<cmd>CopilotChatFixCode<cr>", desc = "CopilotChat - Fix Code", mode = { "v", "n" } },
-        {
-            "<leader>ccF",
-            "<cmd>CopilotChatFixDiagnostic<CR>",
-            mode = { "v", "n" },
-        },
+        { "<leader>cc",  "<cmd>CopilotChatOpen<CR>",           desc = "CopilotChat: open chat" },
+        { "<leader>ccm", "<cmd>CopilotChatCommitStaged<CR>",   desc = "CopilotChat: generate commit message" },
+        { "<leader>cct", "<cmd>CopilotChatTests<CR>",          desc = "CopilotChat: generate tests" },
+        { "<leader>cce", "<cmd>CopilotChatExplain<CR>",        desc = "CopilotChat: explain code",         mode = { "v", "n" } },
+        { "<leader>ccr", "<cmd>CopilotChatReview<CR>",         desc = "CopilotChat: review code",          mode = { "v", "n" } },
+        { "<leader>ccR", "<cmd>CopilotChatRefactor<CR>",       desc = "CopilotChat: refactor code",        mode = { "v", "n" } },
+        { "<leader>ccn", "<cmd>CopilotChatBetterNamings<CR>",  desc = "CopilotChat: better naming",        mode = { "v", "n" } },
+        { "<leader>ccd", "<cmd>CopilotChatDocumentation<CR>",  desc = "CopilotChat: documentation",        mode = { "v", "n" } },
+        { "<leader>ccf", "<cmd>CopilotChatFixCode<CR>",        desc = "CopilotChat: fix code",             mode = { "v", "n" } },
+        { "<leader>ccF", "<cmd>CopilotChatFixDiagnostic<CR>",  desc = "CopilotChat: fix diagnostic",       mode = { "v", "n" } },
     },
 }
