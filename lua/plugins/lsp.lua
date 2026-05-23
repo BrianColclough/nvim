@@ -21,8 +21,8 @@ return {
                 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action,                      opts("LSP: code action"))
                 vim.keymap.set("n", "gr",          vim.lsp.buf.references,                               opts("LSP: references"))
                 vim.keymap.set("n", "<leader>f",   function() vim.lsp.buf.format({ async = true }) end,  opts("LSP: format buffer"))
-                vim.keymap.set("n", "[d",          function() vim.diagnostic.goto_next() end,            opts("LSP: next diagnostic"))
-                vim.keymap.set("n", "]d",          function() vim.diagnostic.goto_prev() end,            opts("LSP: prev diagnostic"))
+                vim.keymap.set("n", "[d",          function() vim.diagnostic.goto_prev() end,            opts("LSP: prev diagnostic"))
+                vim.keymap.set("n", "]d",          function() vim.diagnostic.goto_next() end,            opts("LSP: next diagnostic"))
             end,
         })
     end,
