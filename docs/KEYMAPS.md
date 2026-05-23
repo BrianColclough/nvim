@@ -58,7 +58,7 @@ Reference for every keybinding configured in this Neovim setup. The leader key i
 | `<leader>fo` | LSP outgoing calls |
 | `<leader>fc` | Git commits |
 | `<leader>fs` | Git status |
-| `<leader>m`  | Git branches |
+| `<leader>gb` | Git branches |
 | `<C-p>` | Git files |
 
 ## LSP
@@ -257,6 +257,5 @@ These work but cause a brief `timeoutlen` delay because the bare key is mapped *
 - `<leader>h` — bare: window-left; prefix: gitsigns hunks
 - `<leader>w` — bare: save; prefix: LSP workspace (`wa`/`wr`/`wl`)
 - `<leader>p` — `x`-mode paste; `n`-mode Fugitive push (different modes, no conflict)
-- `<leader>m` — bare: telescope branches; prefix: harpoon + molten
 
 If a delay annoys you, rebind the bare key (or move the prefix). which-key will pop up the menu during the wait.
