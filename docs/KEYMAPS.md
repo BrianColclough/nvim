@@ -257,6 +257,17 @@ to their visual-line variants (`gj` / `gk` / `g0` / `g$`).
 
 `ys{motion}{char}` add · `cs{old}{new}` change · `ds{char}` delete · in visual: `S{char}`.
 
+## Tests (neotest, `<leader>dt` group)
+
+| Keys | Action |
+|---|---|
+| `<leader>dtr` | Run nearest test |
+| `<leader>dtf` | Run all tests in file |
+| `<leader>dts` | Toggle test summary panel |
+| `<leader>dto` | Toggle test output panel |
+| `<leader>dtx` | Stop running tests |
+| `[t` / `]t` | Jump to previous / next failed test |
+
 ---
 
 ## Known prefix overlaps

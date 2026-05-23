@@ -20,6 +20,8 @@ return {
             { "<leader>g",  group = "git" },
             { "<leader>s",  group = "search word" },
             { "<leader>n",  group = "notes / markdown" },
+            { "<leader>d",  group = "debug / test" },
+            { "<leader>dt", group = "test (neotest)" },
         })
     end,
 }
