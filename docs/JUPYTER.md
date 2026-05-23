@@ -114,6 +114,21 @@ These understand the ` ```python ... ``` ` cell fences that jupytext produces, s
 
 > Make sure you've called `:MoltenInit python3` once first — quarto's runner dispatches to whatever kernel molten has attached. If no kernel is running, the calls become no-ops.
 
+### Persisting cell outputs between sessions
+
+By default, cell outputs disappear when you close Neovim. To save outputs and reload them next session:
+
+| Keys | Action |
+|---|---|
+| `<leader>mS` | Save all cell outputs to `~/.local/share/nvim/molten/<notebook>.json` |
+| `<leader>mL` | Load saved outputs back (run after reopening the notebook) |
+
+**Tip:** pair `<leader>mL` with `<leader>mA` to reload then re-run everything if outputs are stale.
+
+### Auto-init kernel
+
+When you open a `.ipynb` file, the `python3` kernel starts automatically — no need to call `:MoltenInit python3` manually. To use a different kernel, call `:MoltenInit <kernel>` after the file loads.
+
 ---
 
 ## Inline plots (Kitty)

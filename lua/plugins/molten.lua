@@ -1,6 +1,5 @@
 return {
     "benlubas/molten-nvim",
-    -- remote plugins must not be lazy-loaded or :UpdateRemotePlugins won't find them
     lazy = false,
     build = ":UpdateRemotePlugins",
     dependencies = { "3rd/image.nvim" },
@@ -11,6 +10,20 @@ return {
         vim.g.molten_virt_text_output = true
         vim.g.molten_virt_lines_off_by_1 = true
         vim.g.molten_wrap_output = true
+        vim.g.molten_save_path = vim.fn.stdpath("data") .. "/molten"
+    end,
+    config = function()
+        vim.api.nvim_create_autocmd("BufReadPost", {
+            pattern = "*.ipynb",
+            callback = function(ev)
+                vim.schedule(function()
+                    if vim.bo[ev.buf].filetype == "markdown" then
+                        vim.cmd("MoltenInit python3")
+                    end
+                end)
+            end,
+            desc = "Auto-init molten python3 kernel for notebooks",
+        })
     end,
     keys = {
         { "<leader>mi", ":MoltenInit<CR>",                    desc = "Molten: init kernel" },
@@ -21,5 +34,7 @@ return {
         { "<leader>mo", ":noautocmd MoltenEnterOutput<CR>",   desc = "Molten: enter output window" },
         { "<leader>mh", ":MoltenHideOutput<CR>",              desc = "Molten: hide output" },
         { "<leader>mq", ":MoltenDelete<CR>",                  desc = "Molten: delete cell" },
+        { "<leader>mS", ":MoltenSave<CR>",                    desc = "Molten: save outputs to disk" },
+        { "<leader>mL", ":MoltenLoad<CR>",                    desc = "Molten: load outputs from disk" },
     },
 }
