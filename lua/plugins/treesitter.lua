@@ -1,29 +1,21 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    cmd = "TSUpdate",
+    branch = "main",
+    lazy = false,
+    build = function()
+        require("nvim-treesitter").install({
+            "typescript", "html", "javascript", "angular",
+            "json", "json5", "rust", "css", "scss",
+            "python", "markdown", "markdown_inline",
+            "lua", "vim", "vimdoc",
+        })
+    end,
     config = function()
-        local configs = require("nvim-treesitter.configs")
-
-        configs.setup({
-            -- A list of parser names, or "all"
-            ensure_installed = {
-                'typescript', 'html', 'javascript', 'angular', 'json', 'json5', 'rust', 'css', 'scss',
-                'python', 'markdown', 'markdown_inline', 'lua', 'vim', 'vimdoc',
-            },
-
-            -- Install parsers synchronously (only applied to `ensure_installed`)
-            sync_install = false,
-
-            -- Automatically install missing parsers when entering buffer
-            auto_install = true,
-
-            highlight = {
-                enable = true,
-            },
-
-            indent = {
-                enable = true,
-            },
+        -- Enable treesitter highlighting for every filetype that has a parser.
+        vim.api.nvim_create_autocmd("FileType", {
+            callback = function()
+                pcall(vim.treesitter.start)
+            end,
         })
     end,
 }
