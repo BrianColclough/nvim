@@ -61,6 +61,13 @@ Reference for every keybinding configured in this Neovim setup. The leader key i
 | `<leader>gb` | Git branches |
 | `<C-p>` | Git files |
 
+## Python venv (`<leader>cv`)
+
+| Keys | Action |
+|---|---|
+| `<leader>cv` | Open virtualenv selector (venv-selector.nvim) |
+| `<leader>cV` | Reactivate the last-used virtualenv |
+
 ## LSP
 
 Active when an LSP is attached. Python uses `pyright` (types/hover) + `ruff` (lint + format via conform).

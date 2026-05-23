@@ -66,7 +66,7 @@ Restart Neovim.
 
 | Filetype | LSP(s) | Where |
 |---|---|---|
-| Python | `pyright` (types/hover) + `ruff` (lint) | nvim-cmp.lua handlers |
+| Python | `pyright` (types/hover) + `ruff` (lint) — interpreter managed by venv-selector.nvim | nvim-cmp.lua handlers |
 | Lua | `lua_ls` | nvim-cmp.lua handlers |
 | TypeScript / JS | `ts_ls`, `eslint` | nvim-cmp.lua handlers |
 | Rust | `rust_analyzer` | default handler |
