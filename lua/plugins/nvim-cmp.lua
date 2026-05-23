@@ -66,9 +66,10 @@ return {
                         settings = {
                             python = {
                                 analysis = {
-                                    typeCheckingMode = "basic",
+                                    typeCheckingMode = "standard",
                                     autoSearchPaths = true,
                                     useLibraryCodeForTypes = true,
+                                    diagnosticMode = "openFilesOnly",
                                 },
                             },
                         },
