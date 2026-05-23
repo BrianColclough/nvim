@@ -257,6 +257,23 @@ to their visual-line variants (`gj` / `gk` / `g0` / `g$`).
 
 `ys{motion}{char}` add · `cs{old}{new}` change · `ds{char}` delete · in visual: `S{char}`.
 
+## Debug (nvim-dap, `<leader>d` group)
+
+| Mode | Keys | Action |
+|---|---|---|
+| `n` | `<leader>db` | Toggle breakpoint |
+| `n` | `<leader>dB` | Conditional breakpoint |
+| `n` | `<leader>dc` | Continue |
+| `n` | `<leader>di` | Step into |
+| `n` | `<leader>do` | Step over |
+| `n` | `<leader>dO` | Step out |
+| `n` | `<leader>dr` | Open REPL |
+| `n` | `<leader>dl` | Run last configuration |
+| `n` | `<leader>du` | Toggle DAP UI |
+| `n` | `<leader>dq` | Quit / terminate session |
+| `n,v` | `<leader>de` | Evaluate expression under cursor |
+| `n` | `<leader>dtp` | Debug test method under cursor |
+
 ## Tests (neotest, `<leader>dt` group)
 
 | Keys | Action |

@@ -43,7 +43,7 @@ The Jupyter stack is **molten-nvim + jupytext.nvim + quarto-nvim + image.nvim**.
 brew install imagemagick
 
 # Python — install into the env you'll use for notebooks (or your nvim-host env)
-pip install pynvim jupyter_client cairosvg pnglatex pillow ipykernel
+pip install pynvim jupyter_client cairosvg pnglatex pillow ipykernel debugpy
 ```
 
 Then in Neovim:
