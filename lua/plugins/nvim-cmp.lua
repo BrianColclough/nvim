@@ -89,19 +89,23 @@ return {
                 end,
 
                 ["angularls"] = function()
-                    local cmd = {
-                        "ngserver",
-                        "--stdio",
-                        "--tsProbeLocations",
-                        "--ngProbeLocations",
-                    }
-
                     local lspconfig = require("lspconfig")
                     lspconfig.angularls.setup({
                         capabilities = capabilities,
-                        config = {
-                            cmd = cmd,
+                        cmd = {
+                            "ngserver",
+                            "--stdio",
+                            "--tsProbeLocations",
+                            "--ngProbeLocations",
                         },
+                        on_new_config = function(new_config, _)
+                            new_config.cmd = {
+                                "ngserver",
+                                "--stdio",
+                                "--tsProbeLocations",
+                                "--ngProbeLocations",
+                            }
+                        end,
                     })
                 end,
 
