@@ -1,6 +1,5 @@
 return {
     "linux-cultist/venv-selector.nvim",
-    branch = "regexp",
     ft = "python",
     dependencies = {
         "neovim/nvim-lspconfig",

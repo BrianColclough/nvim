@@ -21,7 +21,7 @@ How to get this Neovim config running from scratch on **macOS** and **Arch Linux
 ### 1. System packages (Homebrew)
 
 ```bash
-brew install neovim git ripgrep fd imagemagick lazygit stylua node python tree-sitter-cli
+brew install neovim git ripgrep fd imagemagick lazygit stylua node python
 brew install --cask kitty                 # or font-hack-nerd-font + your terminal of choice
 brew install --cask font-jetbrains-mono-nerd-font
 ```
@@ -76,7 +76,7 @@ Press `<leader>ml` on a line — output should appear as virtual text.
 ### 1. System packages (pacman)
 
 ```bash
-sudo pacman -S neovim git ripgrep fd imagemagick lazygit stylua nodejs npm python python-pip tree-sitter-cli
+sudo pacman -S neovim git ripgrep fd imagemagick lazygit stylua nodejs npm python python-pip
 sudo pacman -S xclip wl-clipboard          # required for system clipboard ("unnamedplus")
 sudo pacman -S ttf-jetbrains-mono-nerd     # or any nerd font from the AUR
 ```
@@ -155,7 +155,6 @@ Run `:checkhealth` and check:
 - **No matplotlib images** — your terminal doesn't speak the Kitty graphics protocol. Confirmed working: Kitty, Ghostty, WezTerm. Not working: Terminal.app, iTerm2, Alacritty, GNOME Terminal.
 - **Clipboard yanks vanish on Linux** — install `xclip` (X11) or `wl-clipboard` (Wayland).
 - **`ruff` formatter does nothing** — `ruff` binary missing on `$PATH`. `pip install ruff` (or `pacman -S ruff`).
-- **Treesitter parser build errors ("ENOENT: tree-sitter")** — `tree-sitter` CLI is missing. `brew install tree-sitter-cli` (macOS) or `pacman -S tree-sitter` (Arch). Note: `brew install tree-sitter` installs only the library, NOT the CLI — you need `tree-sitter-cli`.
 - **TypeScript/Angular LSP missing** — Mason installs npm packages; needs working `node`/`npm`.
 
 ---
